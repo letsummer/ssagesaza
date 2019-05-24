@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>로그인창</title>
+
+    <style>
+      .lgform {width: 250px; height: 80px; border: 1px solid gray;}
+      #lgbtn {text-align:"center"; width: 80px; height: 40px; border: 0px; background: black; outline:none; color: #ffffff;}
+    </style>
+
+    <script languate="text/javascript">
+      signupClose() /*부모창에서 회원가입창 열리게 해야함ㅠ*/
+      {
+        window.close();
+        window.opener.location.href="signup.html"
+      }
+    </script>
+  </head>
+  <body>
+    <form action="dbmain.html">
+      <table class="lgform">
+        <tr>
+          <td style="width: 40px; background:none; outline:none; color: #ffffff;">
+            <input type="text" name="id" value="" placeholder="아이디" style="border:1px solid gray;"><br>
+            <input type="password" name="pw" value="" placeholder="패스워드" style="border:1px solid gray;">
+          </td>
+          <td colspan="2"><input type="submit" id="lgbtn" value="로그인">
+            <script>
+              
+            </script>
+          </td>
+        </tr>
+        
+      </table>
+      <a href="signup.html">회원가입</a>
+      <a href="findid.html">아이디찾기</a>
+      <a href="findpw.html">비밀번호찾기</a>
+    </form>
+  </body>
+</html>

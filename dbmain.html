@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<meta charset="utf-8">
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>main</title>
+  <style>
+    .srch_item {text-align: center; margin: auto; height:40px; width:400px; border:1px solid gray; background:#ffffff;}
+    #srch {font-size: 16px; width:325px; padding: 10px; border:0px; outline:none; float:left;}
+    #srch_btn {width: 50px; height:40px; border:0px; background: black; outline:none; float:right; color: #ffffff;}
+    #login {width: 100px; height:100%; padding: 5px; border:0px; background:white; outline:groove; float:right; color: #000000;}
+    #mypage {width: 100px; height:100%; padding: 5px; border:0px; background: white; outline: groove; float:right; color: #000000;}
+
+  </style>
+
+  <script language="javascript">
+    function showLogin()
+    {
+      window.open("logpop.html","logpop","width=400, height=300, left=100, top=50")
+    }
+    function myPage()
+    {
+      alert("로그인을 먼저 해주세요!")
+    }
+    
+  </script>
+
+  
+</head>
+<body>
+  <header>
+    
+    <div class="lgnmp">
+      <button id="login" value="" onclick="showLogin()">로그인</button>
+      <button id="mypage" value="" onclick="myPage()">마이페이지</button>
+    </div>
+
+    <br><br>
+    
+    <div style="margin-left: px;">
+      <img width=5% height=5% src="data:image/svg+xml;utf8;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iaXNvLTg4NTktMSI/Pgo8IS0tIEdlbmVyYXRvcjogQWRvYmUgSWxsdXN0cmF0b3IgMTkuMC4wLCBTVkcgRXhwb3J0IFBsdWctSW4gLiBTVkcgVmVyc2lvbjogNi4wMCBCdWlsZCAwKSAgLS0+CjxzdmcgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB4bWxuczp4bGluaz0iaHR0cDovL3d3dy53My5vcmcvMTk5OS94bGluayIgdmVyc2lvbj0iMS4xIiBpZD0iTGF5ZXJfMSIgeD0iMHB4IiB5PSIwcHgiIHZpZXdCb3g9IjAgMCA1MTIgNTEyIiBzdHlsZT0iZW5hYmxlLWJhY2tncm91bmQ6bmV3IDAgMCA1MTIgNTEyOyIgeG1sOnNwYWNlPSJwcmVzZXJ2ZSIgd2lkdGg9IjUxMnB4IiBoZWlnaHQ9IjUxMnB4Ij4KPHBhdGggc3R5bGU9ImZpbGw6I0EyQUFDMjsiIGQ9Ik00OTQuMzQ3LDExNC43NjRjLTQuODc5LDAtOC44MjgsMy45NDgtOC44MjgsOC44Mjh2NzAuNjIxaC0zNS4zMXYtNzYuMTM4ICBjMC00Ljg3OS0zLjk0OC04LjgyOC04LjgyOC04LjgyOHMtOC44MjgsMy45NDgtOC44MjgsOC44Mjh2NzYuMTM4aC0zNy4zMzZ2LTgyLjM4OGMwLTQuODc5LTMuOTQ4LTguODI4LTguODI4LTguODI4ICBzLTguODI4LDMuOTQ4LTguODI4LDguODI4djgyLjM4OGgtMzcuNjk4di04OS43NDljMC00Ljg3OS0zLjk0OC04LjgyOC04LjgyOC04LjgyOHMtOC44MjgsMy45NDgtOC44MjgsOC44Mjh2ODkuNzVoLTM1LjcxNSAgbC00LjAxOC05Ny4wMzRjLTAuMTk5LTQuODc5LTQuNTUyLTguNjI5LTkuMTgxLTguNDU3Yy00Ljg3MSwwLjE5OS04LjY2NCw0LjMxLTguNDU3LDkuMTgxbDMuOTg4LDk2LjMxaC0zNy4yNDNMMjE4LjA0NSw4Ny42MzUgIGMtMC42MjEtNC44MzYtNS4wMDktOC4yMzMtOS44Ny03LjY0N2MtNC44MzYsMC42MTItOC4yNTgsNS4wMzUtNy42NDcsOS44N2wxMy4yNTYsMTA0LjM1M2gtNDEuMzE1TDE0Ny45NSw4MC41MzEgIGMtMS4wMzUtNC43NjctNS43MzItNy44MS0xMC40OTItNi43NjdjLTQuNzY3LDEuMDI2LTcuNzk0LDUuNzI1LTYuNzY3LDEwLjQ5MmwyMy43MTUsMTA5Ljk1N2gtNDEuMzg4TDY0LjQ4MywzNC4wNDggIGMtMi44MzYtOS4zNTQtMTAuNTUyLTE2LjM2Mi0yMC4xNTYtMTguMjkzbC0zMy43NjctNi43NWMtNC44MjgtMS4wMDktOS40NCwyLjE0Ni0xMC4zODgsNi45MjIgIGMtMC45NTcsNC43ODUsMi4xNDYsOS40MzEsNi45MjIsMTAuMzg4bDMzLjc1OSw2Ljc1YzMuMjA3LDAuNjQ3LDUuNzg0LDIuOTgzLDYuNzMzLDYuMTAzbDg0LjE0MSwyNzcuNjc2bC00Ni4wMjksODUuNDk4ICBjLTQuNDY2LDguMjg1LTQuMjUsMTguMDYsMC41NjksMjYuMTM5YzQuODI4LDguMDc3LDEzLjMyNywxMi45MDUsMjIuNzQxLDEyLjkwNWgzNjcuNjgyYzQuODc5LDAsOC44MjgtMy45NDgsOC44MjgtOC44MjggIHMtMy45NDgtOC44MjgtOC44MjgtOC44MjhIMTA5LjAxYy00LjUyNiwwLTYuODEtMy4wMDktNy41NzctNC4zMDFjLTAuNzc2LTEuMjkzLTIuMzM2LTQuNzMzLTAuMTktOC43MTVsNDUuNDgzLTg0LjQ3NSAgbDMzMS45NC0yNC44OTdjMTMuNzQxLTEuMDI2LDI0LjUwOS0xMi42MjksMjQuNTA5LTI2LjQwNlYxMjMuNTkxQzUwMy4xNzUsMTE4LjcxMyw0OTkuMjI2LDExNC43NjQsNDk0LjM0NywxMTQuNzY0eiAgIE0xNDcuNjM5LDMwOC40NjNsLTI5LjI3MS05Ni41OTVoMzkuODQ2bDIwLjMzMyw5NC4yNzdMMTQ3LjYzOSwzMDguNDYzeiBNMTk2LjMyMiwzMDQuODEybC0yMC4wNDYtOTIuOTQ0aDM5Ljc1bDExLjUwOSw5MC42MDMgIEwxOTYuMzIyLDMwNC44MTJ6IE0yNDUuMTY3LDMwMS4xNWwtMTEuMzQxLTg5LjI4MWgzNS43M2wzLjYwOSw4Ny4xODNMMjQ1LjE2NywzMDEuMTV6IE0zMjIuMjA5LDI5NS4zNzJsLTMxLjQzLDIuMzU3bC0zLjU1NS04NS44NjIgIGgzNC45ODVWMjk1LjM3MnogTTM3Ny41NjIsMjkxLjIyMmwtMzcuNjk4LDIuODI4di04Mi4xODJoMzcuNjk4VjI5MS4yMjJ6IE00MzIuNTU0LDI4Ny4wOTdsLTM3LjMzNiwyLjgwMXYtNzguMDMxaDM3LjMzNlYyODcuMDk3eiAgIE00ODUuNTE5LDI3NC45MzdjMCw0LjU5NS0zLjU4Niw4LjQ1Ny04LjE3Miw4LjgwMmwtMjcuMTM4LDIuMDM1di03My45MDZoMzUuMzFWMjc0LjkzN3oiLz4KPGc+Cgk8Y2lyY2xlIHN0eWxlPSJmaWxsOiM1QjVENkU7IiBjeD0iMTMyLjQxNCIgY3k9IjQ3Ni43IiByPSIyNi40ODMiLz4KCTxjaXJjbGUgc3R5bGU9ImZpbGw6IzVCNUQ2RTsiIGN4PSI0NTAuMjA4IiBjeT0iNDc2LjciIHI9IjI2LjQ4MyIvPgo8L2c+CjxnPgoJPHBhdGggc3R5bGU9ImZpbGw6I0M3Q0ZFMjsiIGQ9Ik0xMzIuNDE1LDQ4NS41MjNMMTMyLjQxNSw0ODUuNTIzYy01LjEzMywwLTkuNTUzLTMuNjIzLTEwLjU1OS04LjY1N2wtNy4wOTYtMzUuNDgxaDM1LjMxICAgbC03LjA5NiwzNS40ODFDMTQxLjk2Nyw0ODEuOSwxMzcuNTQ3LDQ4NS41MjMsMTMyLjQxNSw0ODUuNTIzeiIvPgoJPHBhdGggc3R5bGU9ImZpbGw6I0M3Q0ZFMjsiIGQ9Ik00NTAuMjA5LDQ4NS41MjNMNDUwLjIwOSw0ODUuNTIzYy01LjEzMywwLTkuNTUzLTMuNjIzLTEwLjU1OS04LjY1N2wtNy4wOTYtMzUuNDgxaDM1LjMxICAgbC03LjA5NiwzNS40ODFDNDU5Ljc2LDQ4MS45LDQ1NS4zNDEsNDg1LjUyMyw0NTAuMjA5LDQ4NS41MjN6Ii8+CjwvZz4KPHBhdGggc3R5bGU9ImZpbGw6Izk1OUNCMzsiIGQ9Ik01MDQuMjQzLDExNC44MzNMNzIuOTYsNjIuMDIzbDUuNTk2LDE4LjQ2NGw0MjMuNTUsNTEuODYzYzAuMzYyLDAuMDUyLDAuNzI0LDAuMDcsMS4wNzgsMC4wNyAgYzQuMzk2LDAsOC4yMDctMy4yNzYsOC43NS03Ljc1OEM1MTIuNTI3LDExOS44MjQsNTA5LjA4OCwxMTUuNDE5LDUwNC4yNDMsMTE0LjgzM3oiLz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPC9zdmc+Cg==" />
+    </div>
+
+    <div class="sitename" style="text-align: center; margin: auto; font-size: 30px">
+      <b>싸게사자</b>
+    </div>
+
+    <br><br>
+
+    <div class="srch_item" align="center">
+        <form action="/search" method="get" id="srch_form">
+          <input type="text" placeholder="상품명을 입력해주세요" value="" id="srch" name="item">
+          <button type="submit" id="srch_btn">검색</button>
+          <script>
+            if(item=="바나나")
+              ;
+          </script>
+      </form>
+    </div>
+
+
+    <p>
+    <div style="text-align:center; margin:auto; width: 700px; height: 80px; background-color: rgb(236, 236, 236);">
+      <div style="padding: 30px; margin: auto;">
+        <input type="checkbox" name="emart">이마트몰</input>
+        <input type="checkbox" name="homeplus">홈플러스</input>
+        <input type="checkbox" name="lottemart">롯데마트</input>
+      </div>
+    </div>
+    </p>
+
+    <div style="text-align:center; margin:auto; width:700px; height:700px; border: 1px solid black;" class="item_board">
+    </div>
+
+  </header>
+ 
+
+</body>
+
+
+</html>

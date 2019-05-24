@@ -1,0 +1,435 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>녹두로 - 트게더</title>
+        <style type="text/css" id="alertifyCSS">
+            .alertify-logs>*{padding:12px 24px;color:#fff;box-shadow:0 2px 5px 0 rgba(0,0,0,.2);border-radius:1px}
+            .alertify-logs>*,.alertify-logs>.default{background:rgba(0,0,0,.8)}
+            .alertify-logs>.error{background:rgba(244,67,54,.8)}
+            .alertify-logs>.success{background:rgba(76,175,80,.9)}
+            .alertify{position:fixed;background-color:rgba(0,0,0,.3);left:0;right:0;top:0;bottom:0;width:100%;height:100%;z-index:1}
+            .alertify.hide{opacity:0;pointer-events:none}
+            .alertify,.alertify.show{box-sizing:border-box;transition:all .33s cubic-bezier(.25,.8,.25,1)}
+            .alertify,.alertify *{box-sizing:border-box}
+            .alertify .dialog{padding:12px}
+            .alertify .alert,.alertify .dialog{width:100%;margin:0 auto;position:relative;top:50%;transform:translateY(-50%)}
+            .alertify .alert>*,.alertify .dialog>*{width:400px;max-width:95%;margin:0 auto;text-align:center;padding:12px;background:#fff;box-shadow:0 2px 4px -1px rgba(0,0,0,.14),0 4px 5px 0 rgba(0,0,0,.098),0 1px 10px 0 rgba(0,0,0,.084)}
+            .alertify .alert .msg,.alertify .dialog .msg{padding:12px;margin-bottom:12px;margin:0;text-align:left}
+            .alertify .alert input:not(.form-control),.alertify .dialog input:not(.form-control){margin-bottom:15px;width:100%;font-size:100%;padding:12px}
+            .alertify .alert input:not(.form-control):focus,.alertify .dialog input:not(.form-control):focus{outline-offset:-2px}
+            .alertify .alert nav,.alertify .dialog nav{text-align:right}
+            .alertify .alert nav button:not(.btn):not(.pure-button):not(.md-button):not(.mdl-button),.alertify .dialog nav button:not(.btn):not(.pure-button):not(.md-button):not(.mdl-button){background:transparent;box-sizing:border-box;color:rgba(0,0,0,.87);position:relative;outline:0;border:0;display:inline-block;-ms-flex-align:center;-ms-grid-row-align:center;align-items:center;padding:0 6px;margin:6px 8px;line-height:36px;min-height:36px;white-space:nowrap;min-width:88px;text-align:center;text-transform:uppercase;font-size:14px;text-decoration:none;cursor:pointer;border:1px solid transparent;border-radius:2px}
+            .alertify .alert nav button:not(.btn):not(.pure-button):not(.md-button):not(.mdl-button):active,.alertify .alert nav button:not(.btn):not(.pure-button):not(.md-button):not(.mdl-button):hover,.alertify .dialog nav button:not(.btn):not(.pure-button):not(.md-button):not(.mdl-button):active,.alertify .dialog nav button:not(.btn):not(.pure-button):not(.md-button):not(.mdl-button):hover{background-color:rgba(0,0,0,.05)}
+            .alertify .alert nav button:not(.btn):not(.pure-button):not(.md-button):not(.mdl-button):focus,.alertify .dialog nav button:not(.btn):not(.pure-button):not(.md-button):not(.mdl-button):focus{border:1px solid rgba(0,0,0,.1)}
+            .alertify .alert nav button.btn,.alertify .dialog nav button.btn{margin:6px 4px}
+            .alertify-logs{position:fixed;z-index:1}
+            .alertify-logs.bottom,.alertify-logs:not(.top){bottom:16px}
+            .alertify-logs.left,.alertify-logs:not(.right){left:16px}
+            .alertify-logs.left>*,.alertify-logs:not(.right)>*{float:left;transform:translateZ(0);height:auto}
+            .alertify-logs.left>.show,.alertify-logs:not(.right)>.show{left:0}
+            .alertify-logs.left>*,.alertify-logs.left>.hide,.alertify-logs:not(.right)>*,.alertify-logs:not(.right)>.hide{left:-110%}
+            .alertify-logs.right{right:16px}
+            .alertify-logs.right>*{float:right;transform:translateZ(0)}
+            .alertify-logs.right>.show{right:0;opacity:1}
+            .alertify-logs.right>*,.alertify-logs.right>.hide{right:-110%;opacity:0}
+            .alertify-logs.top{top:0}
+            .alertify-logs>*{box-sizing:border-box;transition:all .4s cubic-bezier(.25,.8,.25,1);position:relative;clear:both;backface-visibility:hidden;perspective:1000;max-height:0;margin:0;padding:0;overflow:hidden;opacity:0;pointer-events:none}
+            .alertify-logs>
+            
+            .show{margin-top:12px;opacity:1;max-height:1000px;padding:12px;pointer-events:auto}
+        </style>
+        
+        <meta charset="utf-8">
+        <meta property="og:title" content="녹두로 - 트게더">
+        <meta name="author" content="트게더">
+        <meta name="description" content="트게더는 한국 트위치 TV 커뮤니티입니다. 트위치 TV 스트리머들과 시청자들이 만들어가는 다양한 컨텐츠를 확인해 보세요.">
+        <meta property="og:description" content="트게더는 한국 트위치 TV 커뮤니티입니다. 트위치 TV 스트리머들과 시청자들이 만들어가는 다양한 컨텐츠를 확인해 보세요.">
+        <meta property="og:image" content="https://d4fodtu7cqfym.cloudfront.net/images/logo_new.png">
+        <meta name="robots" content="index, follow">
+        <link rel="canonical" href="https://tgd.kr/nokduro">
+        <meta property="og:url" content="https://tgd.kr/nokduro">
+        <meta property="og:type" content="website">
+        <meta name="naver-site-verification" content="8104a232949961aa532404ed63ad09672203379c">
+        <link rel="shortcut icon" href="https://d4fodtu7cqfym.cloudfront.net/favicon/favicon.ico">
+        <link rel="apple-touch-icon" sizes="57x57" href="https://d4fodtu7cqfym.cloudfront.net/favicon/apple-icon-57x57.png">
+        <link rel="apple-touch-icon" sizes="60x60" href="https://d4fodtu7cqfym.cloudfront.net/favicon/apple-icon-60x60.png">
+        <link rel="apple-touch-icon" sizes="72x72" href="https://d4fodtu7cqfym.cloudfront.net/favicon/apple-icon-72x72.png">
+        <link rel="apple-touch-icon" sizes="76x76" href="https://d4fodtu7cqfym.cloudfront.net/favicon/apple-icon-76x76.png">
+        <link rel="apple-touch-icon" sizes="114x114" href="https://d4fodtu7cqfym.cloudfront.net/favicon/apple-icon-114x114.png">
+        <link rel="apple-touch-icon" sizes="120x120" href="https://d4fodtu7cqfym.cloudfront.net/favicon/apple-icon-120x120.png">
+        <link rel="apple-touch-icon" sizes="144x144" href="https://d4fodtu7cqfym.cloudfront.net/favicon/apple-icon-144x144.png">
+        <link rel="apple-touch-icon" sizes="152x152" href="https://d4fodtu7cqfym.cloudfront.net/favicon/apple-icon-152x152.png">
+        <link rel="apple-touch-icon" sizes="180x180" href="https://d4fodtu7cqfym.cloudfront.net/favicon/apple-icon-180x180.png">
+        <link rel="icon" type="image/png" sizes="192x192" href="https://d4fodtu7cqfym.cloudfront.net/favicon/android-icon-192x192.png">
+        <link rel="icon" type="image/png" sizes="32x32" href="https://d4fodtu7cqfym.cloudfront.net/favicon/favicon-32x32.png">
+        <link rel="icon" type="image/png" sizes="96x96" href="https://d4fodtu7cqfym.cloudfront.net/favicon/favicon-96x96.png">
+        <link rel="icon" type="image/png" sizes="16x16" href="https://d4fodtu7cqfym.cloudfront.net/favicon/favicon-16x16.png">
+        <link rel="manifest" href="https://d4fodtu7cqfym.cloudfront.net/favicon/manifest.json">
+        <meta name="msapplication-TileColor" content="#6441a5">
+        <meta name="msapplication-TileImage" content="https://d4fodtu7cqfym.cloudfront.net/favicon/ms-icon-144x144.png">
+        <meta name="theme-color" content="#6441a5">
+        <link rel="stylesheet" type="text/css" href="https://d4fodtu7cqfym.cloudfront.net/fafa47a8e15576e84ca73790cafe60db.min.css?v=190503-2">
+        <script async="" src="https://www.google-analytics.com/analytics.js"></script>
+        <script>
+                (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+                (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+                m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+                })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+              
+                ga('create', 'UA-71349615-1', 'auto');
+                ga('send', 'pageview');
+              
+        </script>
+    </head>
+    <body>
+        <header>
+            <div class="container">
+                <div class="row">
+                    <div class="col-xs-4">
+                    <a href="/"><img src="https://d4fodtu7cqfym.cloudfront.net/images/logo_new.png" alt=""></a>
+                    </div>
+                    <div class="col-xs-8" align="right">
+                        <form action="/search" method="get" id="right-search-form">
+                            <input type="text" placeholder="트게더 검색" value="" id="right-search-input" name="q">
+                            <button type="submit" id="right-search-btn"><i class="fa fa-search"></i></button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+              
+            <div id="header-bar" class="container">
+                <div class="row">
+                    <div id="header-menu-left" class="col-xs-2" align="left">
+                        <div class="dropdown">
+                            <a href="#" class="dropdown-toggle" id="latestDropdown" data-toggle="dropdown">
+                                <i class="fa fa-clock-o"></i> 최근<span class="caret"></span>
+                            </a>
+                            <ul class="dropdown-menu" aria-labelledby="latestDropdown" id="latestDropdownMenu"><li><a href="/nokduro"><span class="name">녹두로</span> <span class="delrow"><i class="fa fa-remove"></i></span></a></li><li><a href="/ma_mwa"><span class="name">마뫄</span> <span class="delrow"><i class="fa fa-remove"></i></span></a></li></ul>
+                        </div>
+                        <div class="dropdown">
+                            <a href="#" class="dropdown-toggle" id="favoriteDropdown" data-toggle="dropdown">
+                                <i class="fa fa-star"></i> <span class="caret"></span>
+                            </a>
+                            <ul class="dropdown-menu" aria-labelledby="favoriteDropdown" id="favoriteDropdownMenu"></ul>
+                        </div>
+                        <div class="dropdown">
+                            <a href="#" class="dropdown-toggle" id="playgroundDropdown" data-toggle="dropdown">
+                                <i class="fa fa-smile-o"></i> <span class="caret"></span>
+                            </a>
+                            <ul class="dropdown-menu" aria-labelledby="playgroundDropdown" id="playgroundDropdownMenu">
+                                <li><a href="/play/attendance">출석체크</a></li>
+                                <li><a href="/play/ad">전광판</a></li>
+                                <li><a href="/play/iconshop">아이콘샵</a></li>
+                                <li><a href="/play/giveaway">포인트경품</a></li>
+                                <li class="divider"></li>
+                                <li><a href="/play/chatutil">채팅툴</a></li>
+                            </ul>
+                        </div>
+                    </div>
+              
+                    <div id="header-top-notice" class="col-xs-8" align="center"><strong class="notice-badge">광고</strong> <a href="http://www.twitch.tv/ady8_8" target="_blank">닥소 3 게일 켠왕걸린 미녀스트리머 보러와요♡♡</a>
+                    </div>
+              
+                    <div id="header-menu-right" class="col-xs-2" align="right">
+                        <div class="dropdown">
+                            <a href="/note/lists" class="dropdown-toggle">
+                                <i class="fa fa-envelope-o"></i> <span class="caret"></span>
+                            </a>
+                        </div>
+                        <div class="dropdown">
+                            <a href="#" class="dropdown-toggle" id="userDropdown" data-toggle="dropdown">
+                                <i class="fa fa-user"></i>
+                                <span class="caret"></span>
+                            </a>
+                            <ul class="dropdown-menu dropdown-menu-right" aria-labelledby="userDropdown">
+                                <li><a href="/member/login"><i class="fa fa-twitch"></i> 로그인</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </header>
+        
+        <div id="content-area">
+                <!--div class="container"><div class="row"><div class="col-xs-12"><div class="alert alert-info"><i class="fa fa-wrench"></i> 현재 트게더 데이터베이스 개선 작업 중입니다. <a href="/13440939">[자세한 내용 보기]</a></div></div></div></div-->
+                
+            <div class="container" id="main">
+                <div class="row">
+                    <div class="col-xs-2" id="main-menu">
+
+                        <div class="menu-wrapper">
+                            <div class="header"><i class="fa fa-bars"></i> 트게더 전체 메뉴</div>
+                            <a class="shortcut-link" data-shortcut="a" href="/all"><em>A</em>전체 글 보기</a>
+                            <div class="spacer"></div>
+                            <a class="shortcut-link" data-shortcut="b" href="/streamer"><em>B</em>스트리머 게시판</a>
+                            <a class="shortcut-link" data-shortcut="c" href="/community"><em>C</em>커뮤니티</a>
+                            <a class="shortcut-link" data-shortcut="h" href="/clips"><em>H</em>핫클립</a>
+                            <a class="shortcut-link" data-shortcut="o" href="/esports"><em>O</em>게임대회</a>
+                            <div class="spacer"></div>
+                            <a class="shortcut-link" data-shortcut="p" href="/pr"><em>P</em>방송홍보</a>
+                            <a class="shortcut-link" data-shortcut="w" href="/recruit_new"><em>W</em>구인구직</a>
+                            <a class="shortcut-link" data-shortcut="q" href="/qna"><em>Q</em>Q&amp;A</a>
+                            <a class="shortcut-link" data-shortcut="t" href="/tip"><em>T</em>방송 TIP</a>
+                            <div class="spacer"></div>
+                            <a class="shortcut-link" data-shortcut="n" href="/notice"><em>N</em>공지사항</a>
+                            <a class="shortcut-link" data-shortcut="e" href="/event"><em>E</em>이벤트</a>
+                        </div>
+          
+                        <div class="menu-wrapper">
+                            <div class="header"><i class="fa fa-bars"></i> 유용한 링크</div>
+                            <a class="useful-links" href="https://twitch.tv" target="_blank"><i class="fa fa-square"></i> 트위치</a>
+                            <a class="useful-links" href="https://cast.help" target="_blank"><i class="fa fa-square"></i> cast.help</a>
+                            <a class="useful-links" href="https://twip.kr" target="_blank"><i class="fa fa-square"></i> Twip</a>
+                            <a class="useful-links" href="https://battle.dog" target="_blank"><i class="fa fa-square"></i> Battle.dog</a>
+                            <a class="useful-links" href="https://www.twitch.tv/creatorcamp/ko-kr" target="_blank"><i class="fa fa-square"></i> 스트리머 캠프</a>
+                            <a class="useful-links" style="letter-spacing:-1px;" href="https://goo.gl/forms/ALDa2tEqh31kYmCm1" target="_blank"><i class="fa fa-square"></i> 파트너 스포트라이트</a>
+                        </div>
+          
+                        <div class="menu-wrapper">
+                            <div class="header"><a href="/schedule" class="schedule-link" data-type="header-pc"><i class="fa fa-calendar"></i> 트위치 스케줄</a></div>
+                            <a href="/schedule" class="schedule-link" data-type="header-pc-date" target="_blank" style="font-size: 12px; padding: .6em 1.4em .6em .7em;"><i class="fa fa-square"></i> 2019년 05월 21일 (화)</a>
+                                      
+                            <a href="/schedule" class="schedule-link more" data-type="more">스케줄 더 보기 »</a>
+                        </div>
+                      
+                        <div id="left-banner-area"></div>
+                      
+                        <!-- tgd_sidebar -->
+                        <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-5807968391783575" data-ad-slot="2221690044" data-ad-format="auto"></ins>
+                    </div>
+
+                    <div class="col-xs-10" id="main-content">
+                        <div class="frame">
+                            <div id="board-info" data-owner-id="137687203" data-type="streamer" data-alias="nokduro" data-name="녹두로">
+                                <img src="https://static-cdn.jtvnw.net/jtv_user_pictures/9c692e90-6f4f-4585-a3f3-f8610dfbf237-profile_image-300x300.png" alt="" id="board-info-profile-img" class="pull-right img-rounded" width="64" height="64">
+                                <h1>
+                                    <a href="/nokduro">녹두로</a>
+                                    <span class="badge badge-success">31위</span>
+                                    <span id="viewers-area" class=""><i class="fa fa-user"></i> <span id="viewers">11</span></span>
+                                </h1>
+                  
+                                <div id="board-info-bottom">
+                                    <a href="/nokduro/profile"><i class="fa fa-info-circle"></i> 소개</a><a target="_blank" href="//twitch.tv/nokduro"><i class="fa fa-twitch"></i> 채널</a><a href="/clips?streamer_id=137687203" id="goClipBtn"><i class="fa fa-film"></i> 클립</a>
+                                </div>
+                            </div>
+          
+                            <!-- tgd_board_list -->
+                            <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-5807968391783575" data-ad-slot="5992484593" data-ad-format="auto"></ins>
+                            <div id="article-list">
+                                <div id="article-option-area">
+                                    <input type="checkbox" id="hide_notice" class="hide">
+                                    <button id="article-option-area-toggle-btn"><i class="fa fa-eye"></i></button>
+                                </div>
+                                <div id="article-list-category">
+                                    <a class="nav-link active" href="/nokduro"><i class="fa fa-home"></i></a><a style="color:#ed7607" class="nav-link " href="/nokduro?category=444156">잡담</a><a style="color:#00bf00" class="nav-link " href="/nokduro?category=444182">질문</a><a style="color:#fccf19" class="nav-link " href="/nokduro?category=444162">팬아트</a><a style="color:#2586e8" class="nav-link " href="/nokduro?category=444152">게임추천 &amp; 정보</a><a style="color:#f731f7" class="nav-link " href="/nokduro?category=444171">의견 &amp; 건의사항</a><a style="color:#e81010" class="nav-link " href="/nokduro?category=444157">공지사항</a>
+                                </div>
+          
+                                <div class="article-list-row has-category notice  " id="article-list-row-248847">
+                                    <div class="item">
+                  
+                                        <div class="list-header v58">
+                                            <strong>공지</strong>
+                                        </div>
+                                        <div class="list-title">
+                                            <span class="a-badge"><i class="fa fa-info-circle"></i></span>
+                                            <a title="[녹두로] 게시판 입니다" href="/248847" style="font-weight:bold;">[녹두로] 게시판 입니다</a>
+                                            <div class="list-writer  logged">
+                                                <span>
+                                                <img src="https://static-cdn.jtvnw.net/chat-badges/globalmod.png" alt="Global Moderator" title="Global Moderator" align="absmiddle">                     트게더                </span>
+                                            </div>
+                                        </div>
+          
+                                        <div class="list-time">
+                                            11-05
+                                        </div>
+                                    </div>
+                                </div>
+          
+                                <div class="article-list-row has-category  hot " id="article-list-row-23079559">
+                                    <div class="item">
+                                        <div class="list-header v23">
+                                            <b>인기</b>
+                                        </div>
+          
+                                        <div class="list-title">
+                                            <div class="list-category"><span class="category" style="color:#f731f7">의견 &amp; 건의사항</span>
+                                            </div>
+                                            <span class="a-badge"><i class="fa fa-star"></i></span>
+                                            <a title="채팅 매니저 고민해보셔야할 듯 합니다." href="/23079559?page=1" style="">채팅 매니저 고민해보셔야할 듯 합니다.</a>
+                                            <small class="comment-count">[10]</small>
+                      
+                                            <div class="list-writer  logged">
+                                                <span>케_세라_세라</span>
+                                            </div>
+                                        </div>
+          
+                                        <div class="list-time">05-20</div>
+                                    </div>
+                                </div>
+          
+                                <div class="article-list-row has-category  hot " id="article-list-row-23080991">
+                                    <div class="item">
+                  
+                                        <div class="list-header v15">
+                                            <b>인기</b>
+                                        </div>
+          
+                                        <div class="list-title">
+                                            <div class="list-category">
+                                                <span class="category" style="color:#ed7607">잡담</span>
+                                            </div>
+                      
+                                            <span class="a-badge"><i class="fa fa-star"></i></span>
+                                            <a title="고정팬층+한 우물 전문 스트리머" href="/23080991?page=1" style="">고정팬층+한 우물 전문 스트리머</a>
+          
+                                            <small class="comment-count">[4]</small>
+                      
+                      
+                      
+                                            <div class="list-writer  logged">
+                                                <span><img src="https://static-cdn.jtvnw.net/badges/v1/26f17087-e406-4682-9770-10cbd502115e/1" align="absmiddle">김마몫</span>
+                                            </div>
+                                        </div>
+          
+                                        <div class="list-time">05-20</div>
+                                    </div>
+                                </div>
+          
+                                <div class="article-list-row has-category  hot " id="article-list-row-23077265">
+                                    <div class="item">
+                                        <div class="list-header v13">
+                                            <b>인기</b>
+                                        </div>
+          
+                                        <div class="list-title">
+                                            <div class="list-category">
+                                                <span class="category" style="color:#ed7607">잡담</span>
+                                            </div>
+                      
+                                            <span class="a-badge"><i class="fa fa-star"></i></span>
+                                            <a title="컨텐츠 독점 머기업 녹두로" href="/23077265?page=1" style="">컨텐츠 독점 머기업 녹두로</a>
+                                            <small class="comment-count">[1]</small>
+                      
+                      
+                      
+                                            <div class="list-writer  logged">
+                                                <span>팬레</span>
+                                            </div>
+                                        </div>
+          
+                                        <div class="list-time">05-20</div>
+                                    </div>
+                                </div>
+          
+                                <div class="article-list-row has-category   " id="article-list-row-23104653">
+                                    <div class="item">
+                                        <div class="list-header v4">
+                                            <span>4</span>
+                                        </div>
+          
+                                        <div class="list-title">
+                                            <div class="list-category">
+                                                <span class="category" style="color:#ed7607">잡담</span>
+                                            </div>
+                      
+                                            <span class="a-badge"><i class="fa fa-commenting-o"></i></span>
+                                            <a title="와우 31위라니" href="/23104653" style="">와우 31위라니</a>
+                                            <small class="comment-count">[2]</small>
+                      
+                                            <div class="list-writer  logged">
+                                                <span>푸른콩깍지</span>
+                                            </div>
+                                        </div>
+          
+                                        <div class="list-time">04:39</div>
+                                    </div>
+                                </div>
+          
+                                <div class="article-list-row has-category   " id="article-list-row-23104559">
+                                    <div class="item">
+                                        <div class="list-header v3">
+                                            <span>3</span>
+                                        </div>
+          
+                                        <div class="list-title">
+                                            <div class="list-category"><span class="category" style="color:#ed7607">잡담</span></div>
+                      
+                                            <span class="a-badge"><i class="fa fa-picture-o"></i></span>
+                                            <a title="3D월드 테마 정리" href="/23104559" style="">3D월드 테마 정리</a>
+                                            <div class="list-writer ">
+                                            <span>풍엽풍</span>
+                                            </div>
+                                        </div>
+          
+                                        <div class="list-time">04:34</div>
+                                    </div>
+                                </div>
+          
+                                <div id="article-list-menu">
+                                    <a href="/nokduro?filter_mode=best" class="btn square btn-default best"><i class="fa fa-star"></i> 인기글</a>
+                                    <ul class="pagination"><li class="disabled"></li><li class="active"><a href="#">1<span class="sr-only"></span></a></li><li><a href="/nokduro/page/2" data-ci-pagination-page="2">2</a></li><li><a href="/nokduro/page/3" data-ci-pagination-page="3">3</a></li><li><a href="/nokduro/page/4" data-ci-pagination-page="4">4</a></li><li><a href="/nokduro/page/2" data-ci-pagination-page="2" rel="next">&gt;</a></li></ul>                <a href="/board/write/nokduro" class="btn square btn-primary write"><i class="fa fa-pencil"></i> 글 쓰기</a>
+                                </div>
+          
+                                <form class="input-group" method="get" action="/nokduro" id="boardSearchForm">
+                                    <input type="hidden" name="search_type" value="title">
+                                    <span class="input-group-btn">
+                                        <button type="button" class="btn square btn-default dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><span id="search-type-desc">제목</span> <span class="caret"></span></button>
+                                        <div class="dropdown-menu">
+                                            <li><a href="#" data-value="title">제목</a></li>
+                                            <li><a href="#" data-value="titlecont">제목+내용</a></li>
+                                            <li><a href="#" data-value="nickname">닉네임</a></li>
+                                        </div>
+                                    </span>
+                                    <input type="text" name="search_term" class="form-control" placeholder="검색어" value="">
+                                    <span class="input-group-btn">
+                                        <button class="btn square btn-default" type="submit"><i class="fa fa-search"></i></button>
+                                    </span>
+                                </form>
+                            </div>
+          
+                            <ul id="writerContextMenu" class="dropdown-menu" role="menu" style="display: none;">
+              <li><a tabindex="-1" href="#">작성 글 보기</a></li>
+              <li><a tabindex="-1" href="#">차단하기</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+          
+                <div style="text-align: right; margin: 0 -15px 0; padding: 20px 0 0;">
+                <!-- tgd_bottom_pc -->
+                    <ins class="adsbygoogle" style="display:inline-block;width:970px;height:250px" data-ad-client="ca-pub-5807968391783575" data-ad-slot="8693348598"></ins>
+                </div>
+          
+                <!-- ad -->
+                <div id="weare-out-of-food" data-origin-width="300" style="width: 0px; margin-top: 10px; top: 106px; left: 0px; position: fixed; overflow: hidden; z-index: 10000;">
+                    <ins class="adsbygoogle" style="display:inline-block;width:300px;height:600px" data-ad-client="ca-pub-5807968391783575" data-ad-slot="5039186842"></ins>
+                </div>
+                  
+                <div id="plz-dont-block-me" data-origin-width="300" style="width: 0px; margin-top: 10px; top: 106px; right: 0px; position: fixed; overflow: hidden; z-index: 10000;">
+                <!-- tgd_right1 -->
+                    <ins class="adsbygoogle" style="display:inline-block;width:300px;height:250px" data-ad-client="ca-pub-5807968391783575" data-ad-slot="1372238725"></ins>
+                  
+                <!-- tgd_right2 -->
+                    <ins class="adsbygoogle" style="display:inline-block;width:300px;height:250px" data-ad-client="ca-pub-5807968391783575" data-ad-slot="9764189475"></ins>
+                </div>
+                <!-- end ad -->
+            </div>
+        </div>
+
+        <footer>
+            <div class="container">
+                <span>© 2017-2018 트게더<br>
+                    <a href="/docs/policy.html" target="_blank">이용약관</a>
+                     | 
+                    <a href="/docs/privacy.html" target="_blank">개인정보보호방침</a>
+                     | 
+                    <a href="https://github.com/ejnkr/apply" target="_blank">채용</a>
+                     | 
+                    <a href="/pages/adcontact">광고문의</a> | <a href="/support">고객지원</a><br>
+                    트게더는 Twitch에서 운영하는 사이트가 아닙니다.<br><br>
+                    <a href="/?platform=mobile" id="switch-platform-link">모바일버전으로 전환하기</a>
+                </span>
+            </div>
+        </footer>
+    </body>
+</html>
